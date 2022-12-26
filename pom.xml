@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>../validation-module</module>
+        <module>../validation</module>
         <module>../crawler</module>
         <module>../exceptions</module>
         <module>../html-parser</module>
