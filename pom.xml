@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.debuggd</groupId>
+    <artifactId>root</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>../validation-module</module>
+        <module>../crawler</module>
+        <module>../exceptions</module>
+        <module>../html-parser</module>
+        <module>../http-client</module>
+        <module>../immobot-crawler</module>
+        <module>../immobot-parsers</module>
+        <module>../regx</module>
+        <module>../textr</module>
+        <module>../urls</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <MAVEN_LOCAL_REPOSITORY>/Users/alex/.m2/repository</MAVEN_LOCAL_REPOSITORY>
+        <SPOTBUGS_VERSION>4.6.0</SPOTBUGS_VERSION>
+        <SPOTBUGS_MAVEN_PLUGIN_VERSION>4.2.0</SPOTBUGS_MAVEN_PLUGIN_VERSION>
+        <JUNIT_JUPITER_API_VERSION>5.8.2</JUNIT_JUPITER_API_VERSION>
+    </properties>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.github.spotbugs/spotbugs-annotations -->
+        <dependency>
+            <groupId>com.github.spotbugs</groupId>
+            <artifactId>spotbugs-annotations</artifactId>
+            <version>${SPOTBUGS_VERSION}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.github.spotbugs</groupId>
+                    <artifactId>spotbugs-maven-plugin</artifactId>
+                    <version>${SPOTBUGS_MAVEN_PLUGIN_VERSION}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.github.spotbugs</groupId>
+                            <artifactId>spotbugs</artifactId>
+                            <version>${SPOTBUGS_VERSION}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M5</version>
+                    <configuration>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+    </build>
+
+</project> 
