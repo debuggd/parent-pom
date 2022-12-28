@@ -15,8 +15,6 @@
         <module>../exceptions</module>
         <module>../html-parser</module>
         <module>../http-client</module>
-        <module>../immobot-crawler</module>
-        <module>../immobot-parsers</module>
         <module>../regx</module>
         <module>../textr</module>
         <module>../urls</module>
